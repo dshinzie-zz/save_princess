@@ -28,9 +28,8 @@ class SavePrincess
     mario, princess = get_positions
     row_moves, col_moves = mario[0] - princess[0], mario[1] - princess[1]
     puts populate_moves(row_moves, col_moves)
-    populate_moves(row_moves, col_moves)
   end
 end
 
-# sp = SavePrincess.new(3, ["---", "-m-",  "--p"])
+# sp = SavePrincess.new(5, ["p----", "-----", "-----", "-----", "----m"])
 # sp.display_path_to_princess

@@ -62,4 +62,22 @@ class SavePrincessTest < MiniTest::Test
 
     assert_equal out, "UP\nUP\nLEFT\nLEFT\n"
   end
+
+  def test_returns_moves_for_5_by_5
+    sp = SavePrincess.new(5, ["p----", "-----", "--m--", "-----", "-----"])
+    out, err = capture_io do
+      sp.display_path_to_princess
+    end
+
+    assert_equal out, "UP\nUP\nLEFT\nLEFT\n"
+  end
+
+  def test_returns_moves_for_5_by_5_maximum_distance
+    sp = SavePrincess.new(5, ["p----", "-----", "-----", "-----", "----m"])
+    out, err = capture_io do
+      sp.display_path_to_princess
+    end
+
+    assert_equal out, "UP\nUP\nUP\nUP\nLEFT\nLEFT\nLEFT\nLEFT\n"
+  end
 end
