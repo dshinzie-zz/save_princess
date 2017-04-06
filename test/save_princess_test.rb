@@ -26,9 +26,15 @@ class SavePrincessTest < MiniTest::Test
     assert_equal princess_col, nil
   end
 
-  def test_get_position_returns_positions
+  def test_get_position_returns_positions_array
     sp = SavePrincess.new(3, ["---", "-m-", "--p"])
 
     assert_equal sp.get_positions, [[1,1], [2,2]]
+  end
+
+  def test_populate_moves_returns_moves_array
+    sp = SavePrincess.new(3, ["---", "-m-", "--p"])
+
+    assert_equal sp.populate_moves(1, 1), ["UP\n", "LEFT\n"]
   end
 end
