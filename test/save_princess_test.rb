@@ -50,7 +50,16 @@ class SavePrincessTest < MiniTest::Test
     out, err = capture_io do
       sp.display_path_to_princess
     end
-    
+
     assert_equal out, "DOWN\nRIGHT\n"
+  end
+
+  def test_returns_moves_for_3_by_3_maximum_distance
+    sp = SavePrincess.new(3, ["p--", "---", "--m"])
+    out, err = capture_io do
+      sp.display_path_to_princess
+    end
+
+    assert_equal out, "UP\nUP\nLEFT\nLEFT\n"
   end
 end
