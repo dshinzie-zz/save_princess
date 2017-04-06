@@ -36,5 +36,21 @@ class SavePrincessTest < MiniTest::Test
     sp = SavePrincess.new(3, ["---", "-m-", "--p"])
 
     assert_equal sp.populate_moves(1, 1), ["UP\n", "LEFT\n"]
+    assert_equal sp.populate_moves(0, 1), ["LEFT\n"]
+    assert_equal sp.populate_moves(-1, 0), ["DOWN\n"]
+    assert_equal sp.populate_moves(-1, 1), ["DOWN\n","LEFT\n"]
+    assert_equal sp.populate_moves(-1, -1), ["DOWN\n","RIGHT\n"]
+
+    assert_equal sp.populate_moves(2, 1), ["UP\n","UP\n","LEFT\n"]
+    assert_equal sp.populate_moves(2, -2), ["UP\n","UP\n","RIGHT\n","RIGHT\n"]
+  end
+
+  def test_returns_moves_for_3_by_3
+    sp = SavePrincess.new(3, ["---", "-m-", "--p"])
+    out, err = capture_io do
+      sp.display_path_to_princess
+    end
+    
+    assert_equal out, "DOWN\nRIGHT\n"
   end
 end
