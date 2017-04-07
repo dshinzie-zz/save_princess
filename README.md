@@ -3,6 +3,7 @@ This is a solution for the HackerRank problem:
 
 https://www.hackerrank.com/challenges/saveprincess
 
+The file *save_princess_original.rb* is for the original HackerRank format, and the file *save_princess.rb* is a cleaned up version with tests.
 
 ## Input format
 
@@ -32,6 +33,8 @@ LEFT
 This is a solution for the HackerRank problem:
 
 https://www.hackerrank.com/challenges/saveprincess2
+
+The file *save_princess_original.rb* is for the original HackerRank format, and the file *save_princess.rb* is a cleaned up version with tests.
 
 ## Input Format
 The first line of the input is N (<100), the size of the board (NxN). The second line of the input contains two space separated integers, which is the position of the bot.
